@@ -6,11 +6,24 @@
 <title>Mindset Consulting - Intelligence, Experienced</title>
 <meta name="description" content="Mindset Consulting designs the experience layer for enterprise software. A 300-person SAP-first firm and the first US-based SAP AppHaus Network Partner, bringing SAP experience design to the AI era." />
 <meta name="author" content="Amit Shukla" />
+<meta name="theme-color" content="#0A1628" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Mindset Consulting - Intelligence, Experienced" />
 <meta property="og:description" content="Most firms can deploy AI on SAP. Mindset designs the experience that makes it work." />
 <meta property="og:image" content="assets/logos/mindset-social-square.png" />
 <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+<!-- No-flash theme: set before paint from saved choice, else system preference. -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('mindset-theme');
+      var dark = saved ? saved === 'dark'
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', dark);
+    } catch (e) {}
+  })();
+</script>
 
 <!-- Committed type system (BRAND.md sec.5): Source Serif 4 + Switzer + IBM Plex Mono -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,29 +35,32 @@
 
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="font-sans bg-warm-white text-ink antialiased">
+<body class="font-sans bg-warm-white text-ink dark:bg-ink dark:text-stone antialiased">
 
 <a href="#main" class="mindset-skip-link">Skip to content</a>
 
-<!-- ============ NAV (wordmark at top, hands off to {M} on scroll - never both) ============ -->
+<!-- ============ NAV ({M} mark; wordmark lives in the hero body) ============ -->
 <nav id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300" aria-label="Primary">
   <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
     <a href="#top" class="inline-flex items-center min-h-[44px]" aria-label="Mindset Consulting, home">
-      <!-- {M} mark in nav (wordmark lives in the hero body). Bracket-dark on the dark hero, bracket-light once scrolled onto warm-white. -->
       <img id="nav-mark-dark" src="assets/logos/mindset-mark-bracket-dark.svg" alt="Mindset" class="h-6 w-auto" />
       <img id="nav-mark-light" src="assets/logos/mindset-mark-bracket-light.svg" alt="Mindset" class="h-6 w-auto hidden" />
     </a>
-    <div class="flex items-center gap-7">
+    <div class="flex items-center gap-5 sm:gap-7">
       <a href="#approach" class="hidden md:inline-flex items-center min-h-[44px] text-body-sm text-stone/80 hover:text-emerald transition-colors nav-link">Approach</a>
       <a href="#stack" class="hidden md:inline-flex items-center min-h-[44px] text-body-sm text-stone/80 hover:text-emerald transition-colors nav-link">The stack</a>
       <a href="#mind" class="hidden md:inline-flex items-center min-h-[44px] text-body-sm text-stone/80 hover:text-emerald transition-colors nav-link">Accelerators</a>
       <a href="#about" class="hidden md:inline-flex items-center min-h-[44px] text-body-sm text-stone/80 hover:text-emerald transition-colors nav-link">About</a>
+      <button id="theme-toggle" type="button" class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] rounded-full text-stone/80 hover:text-emerald transition-colors nav-link" aria-label="Switch color theme">
+        <svg class="theme-moon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="theme-sun h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
       <a href="https://www.mindsetconsulting.com/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] px-4 font-mono text-body-xs tracking-wider rounded-full border border-emerald/40 text-emerald hover:bg-emerald/10 transition-colors nav-cta">mindsetconsulting.com</a>
     </div>
   </div>
 </nav>
 
-<!-- ============ HERO (dark - opening bookend) ============ -->
+<!-- ============ HERO (always the dark opening bookend, both themes) ============ -->
 <header id="top" class="relative min-h-svh flex items-center overflow-hidden bg-ink text-warm-white">
   <div class="absolute inset-0" aria-hidden="true" style="background:
       radial-gradient(58% 50% at 80% 16%, rgba(30,199,149,0.16), transparent 60%),
@@ -67,7 +83,7 @@
     <div class="reveal flex flex-wrap gap-2 mt-9" data-d="3">
       <span class="font-mono text-body-xs tracking-wider px-3 py-2 rounded-full border border-warm-white/15 bg-warm-white/[0.04] text-stone/80"><b class="text-emerald font-semibold">SAP</b> Gold Partner</span>
       <span class="font-mono text-body-xs tracking-wider px-3 py-2 rounded-full border border-warm-white/15 bg-warm-white/[0.04] text-stone/80"><b class="text-emerald font-semibold">AppHaus</b> Network</span>
-      <span class="font-mono text-body-xs tracking-wider px-3 py-2 rounded-full border border-warm-white/15 bg-warm-white/[0.04] text-stone/80"><b class="text-emerald font-semibold">300</b> Specialists</span>
+      <span class="font-mono text-body-xs tracking-wider px-3 py-2 rounded-full border border-warm-white/15 bg-warm-white/[0.04] text-stone/80"><b class="text-emerald font-semibold">300+</b> Specialists</span>
       <span class="font-mono text-body-xs tracking-wider px-3 py-2 rounded-full border border-warm-white/15 bg-warm-white/[0.04] text-stone/80"><b class="text-emerald font-semibold">15</b> Years</span>
     </div>
   </div>
@@ -75,112 +91,107 @@
 
 <main id="main">
 
-<!-- ============ APPROACH (light) ============ -->
-<section class="bg-warm-white text-ink py-24 md:py-32" aria-labelledby="approach" id="approach">
+<!-- ============ APPROACH ============ -->
+<section class="bg-warm-white text-ink dark:bg-ink dark:text-stone dark:border-t dark:border-warm-white/[0.06] py-24 md:py-32" aria-labelledby="approach-h" id="approach">
   <div class="max-w-6xl mx-auto px-6">
-    <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 before:content-[''] before:w-7 before:h-px before:bg-current">The approach</span>
-    <p class="reveal font-serif italic font-medium tracking-tight mt-6 leading-[1.1] text-[clamp(1.7rem,4.4vw,3.1rem)] max-w-[20ch]" data-d="1">
-      The hard part of AI isn't the model. It's the <span class="text-emerald-700 not-italic">moment someone uses it</span>.
+    <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 dark:text-emerald before:content-[''] before:w-7 before:h-px before:bg-current">The approach</span>
+    <p id="approach-h" class="reveal font-serif font-medium tracking-tight mt-6 leading-[1.1] text-[clamp(1.7rem,4.4vw,3.1rem)] max-w-[20ch] dark:text-warm-white" data-d="1">
+      The hard part of AI isn't the model. It's the <span class="text-emerald-700 dark:text-emerald">moment someone uses it</span>.
     </p>
     <div class="grid gap-8 sm:grid-cols-3 mt-14">
-      <div class="reveal border-t border-ink/15 pt-5">
-        <h3 class="font-mono text-body-xs tracking-[0.14em] uppercase text-emerald-700 mb-3">The problem</h3>
-        <p class="text-ink/70 text-body-md leading-relaxed">Every enterprise is racing to deploy AI on SAP. Most deployments land the model but miss the interface. The AI runs. Nobody uses it. Six months later adoption sits at 15% and the sponsor is defending the invoice.</p>
+      <div class="reveal border-t border-ink/15 dark:border-warm-white/15 pt-5">
+        <h3 class="font-mono text-body-xs tracking-[0.14em] uppercase text-emerald-700 dark:text-emerald mb-3">The problem</h3>
+        <p class="text-ink/70 dark:text-stone/70 text-body-md leading-relaxed">Every enterprise is racing to deploy AI on SAP. Most deployments land the model but miss the interface. The AI runs. Nobody uses it. Six months later adoption sits at 15% and the sponsor is defending the invoice.</p>
       </div>
-      <div class="reveal border-t border-ink/15 pt-5" data-d="1">
-        <h3 class="font-mono text-body-xs tracking-[0.14em] uppercase text-emerald-700 mb-3">The insight</h3>
-        <p class="text-ink/70 text-body-md leading-relaxed">The enterprises winning with AI treated the interface as seriously as the model. The model is the engine. The moment someone actually uses it is the product. That is a design problem, not a training problem.</p>
+      <div class="reveal border-t border-ink/15 dark:border-warm-white/15 pt-5" data-d="1">
+        <h3 class="font-mono text-body-xs tracking-[0.14em] uppercase text-emerald-700 dark:text-emerald mb-3">The insight</h3>
+        <p class="text-ink/70 dark:text-stone/70 text-body-md leading-relaxed">The enterprises winning with AI treated the interface as seriously as the model. The model is the engine. The moment someone actually uses it is the product. That is a design problem, not a training problem.</p>
       </div>
-      <div class="reveal border-t border-ink/15 pt-5" data-d="2">
-        <h3 class="font-mono text-body-xs tracking-[0.14em] uppercase text-emerald-700 mb-3">What we do</h3>
-        <p class="text-ink/70 text-body-md leading-relaxed">We prepare the full SAP landscape for AI - data foundations, platform services, process intelligence, agentic orchestration - then design the experience that makes it land. Sixteen years ago we did this for Fiori and mobile. We do it again for AI.</p>
+      <div class="reveal border-t border-ink/15 dark:border-warm-white/15 pt-5" data-d="2">
+        <h3 class="font-mono text-body-xs tracking-[0.14em] uppercase text-emerald-700 dark:text-emerald mb-3">What we do</h3>
+        <p class="text-ink/70 dark:text-stone/70 text-body-md leading-relaxed">We prepare the full SAP landscape for AI - data foundations, platform services, process intelligence, agentic orchestration - then design the experience that makes it land. Sixteen years ago we did this for Fiori and mobile. We do it again for AI.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ THE STACK (light - dense content belongs on light) ============ -->
-<section class="bg-stone text-ink py-24 md:py-32" aria-labelledby="stack-h" id="stack">
+<!-- ============ THE STACK ============ -->
+<section class="bg-stone text-ink dark:bg-ink dark:text-stone dark:border-t dark:border-warm-white/[0.06] py-24 md:py-32" aria-labelledby="stack-h" id="stack">
   <div class="max-w-6xl mx-auto px-6">
-    <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 before:content-[''] before:w-7 before:h-px before:bg-current">Full stack, one partner</span>
-    <h2 id="stack-h" class="reveal font-serif font-medium tracking-tight mt-4 leading-[1.02] text-[clamp(2rem,4.6vw,3.3rem)] max-w-[18ch]" data-d="1">From data foundation to the agent that acts on it.</h2>
-    <p class="reveal mt-4 text-ink/70 text-body-lg max-w-[46ch]" data-d="2">Five layers of the SAP-for-AI landscape, architected together and designed for the people who use them.</p>
+    <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 dark:text-emerald before:content-[''] before:w-7 before:h-px before:bg-current">Full stack, one partner</span>
+    <h2 id="stack-h" class="reveal font-serif font-medium tracking-tight mt-4 leading-[1.02] text-[clamp(2rem,4.6vw,3.3rem)] max-w-[18ch] dark:text-warm-white" data-d="1">From data foundation to the agent that acts on it.</h2>
+    <p class="reveal mt-4 text-ink/70 dark:text-stone/70 text-body-lg max-w-[46ch]" data-d="2">Five layers of the SAP-for-AI landscape, architected together and designed for the people who use them.</p>
 
     <div class="mt-10 grid gap-3">
-      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 reveal hover:border-emerald-700/40">
-        <span class="font-mono text-body-sm text-emerald-700">01</span>
-        <div><h3 class="font-serif text-xl">Data Foundation</h3><p class="text-ink/70 text-body-sm mt-1 max-w-[60ch]">A unified, governed, AI-ready data layer across SAP and non-SAP sources.</p></div>
-        <span class="font-mono text-body-xs tracking-wide text-slate-strong sm:text-right col-start-2 sm:col-start-3">Business Data Cloud</span>
+      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 dark:bg-warm-white/[0.04] dark:border-warm-white/10 reveal hover:border-emerald-700/40 dark:hover:border-emerald/40">
+        <span class="font-mono text-body-sm text-emerald-700 dark:text-emerald">01</span>
+        <div><h3 class="font-serif text-xl dark:text-warm-white">Data Foundation</h3><p class="text-ink/70 dark:text-stone/70 text-body-sm mt-1 max-w-[60ch]">A unified, governed, AI-ready data layer across SAP and non-SAP sources.</p></div>
+        <span class="font-mono text-body-xs tracking-wide text-slate-strong dark:text-stone/60 sm:text-right col-start-2 sm:col-start-3">Business Data Cloud</span>
       </div>
-      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 reveal hover:border-emerald-700/40">
-        <span class="font-mono text-body-sm text-emerald-700">02</span>
-        <div><h3 class="font-serif text-xl">Platform Services</h3><p class="text-ink/70 text-body-sm mt-1 max-w-[60ch]">Integration, extension, and development - the composable middleware that connects everything.</p></div>
-        <span class="font-mono text-body-xs tracking-wide text-slate-strong sm:text-right col-start-2 sm:col-start-3">SAP BTP</span>
+      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 dark:bg-warm-white/[0.04] dark:border-warm-white/10 reveal hover:border-emerald-700/40 dark:hover:border-emerald/40">
+        <span class="font-mono text-body-sm text-emerald-700 dark:text-emerald">02</span>
+        <div><h3 class="font-serif text-xl dark:text-warm-white">Platform Services</h3><p class="text-ink/70 dark:text-stone/70 text-body-sm mt-1 max-w-[60ch]">Integration, extension, and development - the composable middleware that connects everything.</p></div>
+        <span class="font-mono text-body-xs tracking-wide text-slate-strong dark:text-stone/60 sm:text-right col-start-2 sm:col-start-3">SAP BTP</span>
       </div>
-      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 reveal hover:border-emerald-700/40">
-        <span class="font-mono text-body-sm text-emerald-700">03</span>
-        <div><h3 class="font-serif text-xl">Process Intelligence</h3><p class="text-ink/70 text-body-sm mt-1 max-w-[60ch]">Process mining and analysis that turns operational complexity into clarity you can act on.</p></div>
-        <span class="font-mono text-body-xs tracking-wide text-slate-strong sm:text-right col-start-2 sm:col-start-3">Signavio</span>
+      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 dark:bg-warm-white/[0.04] dark:border-warm-white/10 reveal hover:border-emerald-700/40 dark:hover:border-emerald/40">
+        <span class="font-mono text-body-sm text-emerald-700 dark:text-emerald">03</span>
+        <div><h3 class="font-serif text-xl dark:text-warm-white">Process Intelligence</h3><p class="text-ink/70 dark:text-stone/70 text-body-sm mt-1 max-w-[60ch]">Process mining and analysis that turns operational complexity into clarity you can act on.</p></div>
+        <span class="font-mono text-body-xs tracking-wide text-slate-strong dark:text-stone/60 sm:text-right col-start-2 sm:col-start-3">Signavio</span>
       </div>
-      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 reveal hover:border-emerald-700/40">
-        <span class="font-mono text-body-sm text-emerald-700">04</span>
-        <div><h3 class="font-serif text-xl">AI Intelligence</h3><p class="text-ink/70 text-body-sm mt-1 max-w-[60ch]">Proprietary accelerators for reasoning, monitoring, and integration intelligence.</p></div>
-        <span class="font-mono text-body-xs tracking-wide text-slate-strong sm:text-right col-start-2 sm:col-start-3">MIND Products</span>
+      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 dark:bg-warm-white/[0.04] dark:border-warm-white/10 reveal hover:border-emerald-700/40 dark:hover:border-emerald/40">
+        <span class="font-mono text-body-sm text-emerald-700 dark:text-emerald">04</span>
+        <div><h3 class="font-serif text-xl dark:text-warm-white">AI Intelligence</h3><p class="text-ink/70 dark:text-stone/70 text-body-sm mt-1 max-w-[60ch]">Proprietary accelerators for reasoning, monitoring, and integration intelligence.</p></div>
+        <span class="font-mono text-body-xs tracking-wide text-slate-strong dark:text-stone/60 sm:text-right col-start-2 sm:col-start-3">MIND Accelerators</span>
       </div>
-      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 reveal hover:border-emerald-700/40">
-        <span class="font-mono text-body-sm text-emerald-700">05</span>
-        <div><h3 class="font-serif text-xl">Agentic Orchestration</h3><p class="text-ink/70 text-body-sm mt-1 max-w-[60ch]">Autonomous agents that act on insight - the layer where intelligence becomes action.</p></div>
-        <span class="font-mono text-body-xs tracking-wide text-slate-strong sm:text-right col-start-2 sm:col-start-3">Joule</span>
+      <div class="layer-row grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_1fr_auto] gap-x-5 gap-y-1 items-center p-6 rounded-2xl bg-warm-white border border-ink/8 dark:bg-warm-white/[0.04] dark:border-warm-white/10 reveal hover:border-emerald-700/40 dark:hover:border-emerald/40">
+        <span class="font-mono text-body-sm text-emerald-700 dark:text-emerald">05</span>
+        <div><h3 class="font-serif text-xl dark:text-warm-white">Agentic Orchestration</h3><p class="text-ink/70 dark:text-stone/70 text-body-sm mt-1 max-w-[60ch]">Autonomous agents that act on insight - the layer where intelligence becomes action.</p></div>
+        <span class="font-mono text-body-xs tracking-wide text-slate-strong dark:text-stone/60 sm:text-right col-start-2 sm:col-start-3">Joule</span>
       </div>
     </div>
 
     <div class="flex flex-wrap gap-2 mt-9 reveal">
-      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70">SAP BTP</span>
-      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70">Business Data Cloud</span>
-      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70">Business AI</span>
-      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70">Integration and Modernization</span>
+      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70 dark:border-warm-white/15 dark:text-stone/70">SAP BTP</span>
+      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70 dark:border-warm-white/15 dark:text-stone/70">Business Data Cloud</span>
+      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70 dark:border-warm-white/15 dark:text-stone/70">Business AI</span>
+      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70 dark:border-warm-white/15 dark:text-stone/70">Integration and Modernization</span>
     </div>
   </div>
 </section>
 
-<!-- ============ MIND / ACCELERATORS (light) ============
-     CONTENT NOTE: descriptions removed pending authentic, public-approved copy.
-     Only verbatim-sourced text from the brand repo is shown here. Proposed
-     names (Clarion/Signal/Lattice) were removed - flagged trademark-CONFLICT
-     in the repo's own name analysis. Product names below have shipped public
-     icons in @mindsetconsulting/brand/assets/products. -->
-<section class="bg-warm-white text-ink py-24 md:py-32" aria-labelledby="mind-h" id="mind">
+<!-- ============ MIND / ACCELERATORS ============ -->
+<section class="bg-warm-white text-ink dark:bg-ink dark:text-stone dark:border-t dark:border-warm-white/[0.06] py-24 md:py-32" aria-labelledby="mind-h" id="mind">
   <div class="max-w-6xl mx-auto px-6">
-    <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 before:content-[''] before:w-7 before:h-px before:bg-current">MIND - Mindset Intelligence and Design</span>
-    <h2 id="mind-h" class="reveal font-serif font-medium tracking-tight mt-4 leading-[1.02] text-[clamp(2rem,4.6vw,3.3rem)] max-w-[16ch]" data-d="1">The IP is built, not theoretical.</h2>
-    <p class="reveal mt-4 text-ink/70 text-body-lg max-w-[52ch]" data-d="2">Proprietary accelerators covering integration, analytics, and enterprise experience.</p>
+    <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 dark:text-emerald before:content-[''] before:w-7 before:h-px before:bg-current">MIND - Mindset Intelligence and Design</span>
+    <h2 id="mind-h" class="reveal font-serif font-medium tracking-tight mt-4 leading-[1.02] text-[clamp(2rem,4.6vw,3.3rem)] max-w-[16ch] dark:text-warm-white" data-d="1">The IP is built, not theoretical.</h2>
+    <p class="reveal mt-4 text-ink/70 dark:text-stone/70 text-body-lg max-w-[52ch]" data-d="2">Proprietary accelerators covering integration, analytics, and enterprise experience.</p>
 
     <div class="grid gap-4 sm:grid-cols-3 mt-12">
-      <article class="p-7 rounded-2xl bg-stone/60 border border-ink/8 reveal flex items-center gap-4">
-        <div class="w-12 h-12 shrink-0 rounded-xl bg-ink grid place-items-center"><img src="assets/products/voe-icon.svg" alt="" aria-hidden="true" class="w-6 h-6 invert" /></div>
-        <h3 class="font-serif font-semibold text-xl">VoE</h3>
+      <article class="p-7 rounded-2xl bg-stone/60 border border-ink/8 dark:bg-warm-white/[0.04] dark:border-warm-white/10 reveal flex items-center gap-4">
+        <div class="w-12 h-12 shrink-0 rounded-xl bg-ink dark:bg-warm-white/[0.06] grid place-items-center"><img src="assets/products/voe-icon.svg" alt="" aria-hidden="true" class="w-6 h-6 invert" /></div>
+        <h3 class="font-serif font-semibold text-xl dark:text-warm-white">VoE</h3>
       </article>
-      <article class="p-7 rounded-2xl bg-stone/60 border border-ink/8 reveal flex items-center gap-4" data-d="1">
-        <div class="w-12 h-12 shrink-0 rounded-xl bg-ink grid place-items-center"><img src="assets/products/safe-transport-icon.svg" alt="" aria-hidden="true" class="w-6 h-6 invert" /></div>
-        <h3 class="font-serif font-semibold text-xl">Safe Transport</h3>
+      <article class="p-7 rounded-2xl bg-stone/60 border border-ink/8 dark:bg-warm-white/[0.04] dark:border-warm-white/10 reveal flex items-center gap-4" data-d="1">
+        <div class="w-12 h-12 shrink-0 rounded-xl bg-ink dark:bg-warm-white/[0.06] grid place-items-center"><img src="assets/products/safe-transport-icon.svg" alt="" aria-hidden="true" class="w-6 h-6 invert" /></div>
+        <h3 class="font-serif font-semibold text-xl dark:text-warm-white">Safe Transport</h3>
       </article>
-      <article class="p-7 rounded-2xl bg-stone/60 border border-ink/8 reveal flex items-center gap-4" data-d="2">
-        <div class="w-12 h-12 shrink-0 rounded-xl bg-ink grid place-items-center"><img src="assets/products/fiori-app-analyzer-icon.svg" alt="" aria-hidden="true" class="w-6 h-6 invert" /></div>
-        <h3 class="font-serif font-semibold text-xl">Fiori App Analyzer</h3>
+      <article class="p-7 rounded-2xl bg-stone/60 border border-ink/8 dark:bg-warm-white/[0.04] dark:border-warm-white/10 reveal flex items-center gap-4" data-d="2">
+        <div class="w-12 h-12 shrink-0 rounded-xl bg-ink dark:bg-warm-white/[0.06] grid place-items-center"><img src="assets/products/fiori-app-analyzer-icon.svg" alt="" aria-hidden="true" class="w-6 h-6 invert" /></div>
+        <h3 class="font-serif font-semibold text-xl dark:text-warm-white">Fiori App Analyzer</h3>
       </article>
     </div>
 
     <div class="flex flex-wrap gap-2 mt-8 reveal">
-      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70">SAP BTP</span>
-      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70">Business Data Cloud</span>
-      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70">Business AI</span>
-      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70">Integration and Modernization</span>
+      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70 dark:border-warm-white/15 dark:text-stone/70">SAP BTP</span>
+      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70 dark:border-warm-white/15 dark:text-stone/70">Business Data Cloud</span>
+      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70 dark:border-warm-white/15 dark:text-stone/70">Business AI</span>
+      <span class="font-mono text-body-xs tracking-wide px-4 py-2 rounded-full border border-ink/15 text-ink/70 dark:border-warm-white/15 dark:text-stone/70">Integration and Modernization</span>
     </div>
   </div>
 </section>
 
-<!-- ============ PROOF (dark - the dramatic stat moment) ============ -->
-<section class="bg-ink text-warm-white py-24 md:py-32" aria-labelledby="proof-h" id="proof">
+<!-- ============ PROOF (always the dark dramatic-stat bookend) ============ -->
+<section class="bg-ink text-warm-white dark:border-t dark:border-warm-white/[0.06] py-24 md:py-32" aria-labelledby="proof-h" id="proof">
   <div class="max-w-6xl mx-auto px-6">
     <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald before:content-[''] before:w-7 before:h-px before:bg-current">By the numbers</span>
     <h2 id="proof-h" class="reveal font-serif font-medium tracking-tight mt-4 leading-[1.04] text-[clamp(2rem,4.6vw,3.3rem)] max-w-[20ch]" data-d="1">First US-based SAP AppHaus Network Partner. A credential no competitor holds.</h2>
@@ -202,55 +213,55 @@
   </div>
 </section>
 
-<!-- ============ BRAND SYSTEM (light) ============ -->
-<section class="bg-warm-white text-ink py-24 md:py-32" aria-labelledby="brand-h" id="brand">
+<!-- ============ BRAND SYSTEM ============ -->
+<section class="bg-warm-white text-ink dark:bg-ink dark:text-stone dark:border-t dark:border-warm-white/[0.06] py-24 md:py-32" aria-labelledby="brand-h" id="brand">
   <div class="max-w-6xl mx-auto px-6">
-    <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 before:content-[''] before:w-7 before:h-px before:bg-current">The brand system</span>
-    <h2 id="brand-h" class="reveal font-serif font-medium tracking-tight mt-4 leading-[1.04] text-[clamp(2rem,4.6vw,3.3rem)] max-w-[20ch]" data-d="1">Warm precision. The human and the digital, held in tension.</h2>
-    <p class="reveal mt-4 text-ink/70 text-body-lg max-w-[52ch]" data-d="2">This page is built on the live <code class="font-mono text-emerald-700">@mindsetconsulting/brand</code> design system - the same tokens, type, and color every Mindset project shares.</p>
+    <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 dark:text-emerald before:content-[''] before:w-7 before:h-px before:bg-current">The brand system</span>
+    <h2 id="brand-h" class="reveal font-serif font-medium tracking-tight mt-4 leading-[1.04] text-[clamp(2rem,4.6vw,3.3rem)] max-w-[20ch] dark:text-warm-white" data-d="1">Warm precision. The human and the digital, held in tension.</h2>
+    <p class="reveal mt-4 text-ink/70 dark:text-stone/70 text-body-lg max-w-[52ch]" data-d="2">This page is built on the live <code class="font-mono text-emerald-700 dark:text-emerald">@mindsetconsulting/brand</code> design system - the same tokens, type, and color every Mindset project shares.</p>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-10">
-      <div class="reveal rounded-xl overflow-hidden border border-ink/10"><div class="h-24" style="background:#0A1628"></div><div class="p-3"><b class="block text-body-sm">Ink</b><code class="font-mono text-body-xs text-ink/70">#0A1628</code></div></div>
-      <div class="reveal rounded-xl overflow-hidden border border-ink/10" data-d="1"><div class="h-24" style="background:#00674F"></div><div class="p-3"><b class="block text-body-sm">Emerald 700</b><code class="font-mono text-body-xs text-ink/70">#00674F</code></div></div>
-      <div class="reveal rounded-xl overflow-hidden border border-ink/10" data-d="2"><div class="h-24" style="background:#1EC795"></div><div class="p-3"><b class="block text-body-sm">Emerald 400</b><code class="font-mono text-body-xs text-ink/70">#1EC795</code></div></div>
-      <div class="reveal rounded-xl overflow-hidden border border-ink/10"><div class="h-24" style="background:#C4A77D"></div><div class="p-3"><b class="block text-body-sm">Sand</b><code class="font-mono text-body-xs text-ink/70">#C4A77D</code></div></div>
-      <div class="reveal rounded-xl overflow-hidden border border-ink/10" data-d="1"><div class="h-24" style="background:#8B6F47"></div><div class="p-3"><b class="block text-body-sm">Terracotta</b><code class="font-mono text-body-xs text-ink/70">#8B6F47</code></div></div>
-      <div class="reveal rounded-xl overflow-hidden border border-ink/10" data-d="2"><div class="h-24" style="background:#F7F5F2;border-bottom:1px solid #E8E4DF"></div><div class="p-3"><b class="block text-body-sm">Warm White</b><code class="font-mono text-body-xs text-ink/70">#F7F5F2</code></div></div>
+      <div class="reveal rounded-xl overflow-hidden border border-ink/10 dark:border-warm-white/10"><div class="h-24" style="background:#0A1628"></div><div class="p-3"><b class="block text-body-sm dark:text-warm-white">Ink</b><code class="font-mono text-body-xs text-ink/70 dark:text-stone/70">#0A1628</code></div></div>
+      <div class="reveal rounded-xl overflow-hidden border border-ink/10 dark:border-warm-white/10" data-d="1"><div class="h-24" style="background:#00674F"></div><div class="p-3"><b class="block text-body-sm dark:text-warm-white">Emerald 700</b><code class="font-mono text-body-xs text-ink/70 dark:text-stone/70">#00674F</code></div></div>
+      <div class="reveal rounded-xl overflow-hidden border border-ink/10 dark:border-warm-white/10" data-d="2"><div class="h-24" style="background:#1EC795"></div><div class="p-3"><b class="block text-body-sm dark:text-warm-white">Emerald 400</b><code class="font-mono text-body-xs text-ink/70 dark:text-stone/70">#1EC795</code></div></div>
+      <div class="reveal rounded-xl overflow-hidden border border-ink/10 dark:border-warm-white/10"><div class="h-24" style="background:#C4A77D"></div><div class="p-3"><b class="block text-body-sm dark:text-warm-white">Sand</b><code class="font-mono text-body-xs text-ink/70 dark:text-stone/70">#C4A77D</code></div></div>
+      <div class="reveal rounded-xl overflow-hidden border border-ink/10 dark:border-warm-white/10" data-d="1"><div class="h-24" style="background:#8B6F47"></div><div class="p-3"><b class="block text-body-sm dark:text-warm-white">Terracotta</b><code class="font-mono text-body-xs text-ink/70 dark:text-stone/70">#8B6F47</code></div></div>
+      <div class="reveal rounded-xl overflow-hidden border border-ink/10 dark:border-warm-white/10" data-d="2"><div class="h-24" style="background:#F7F5F2;border-bottom:1px solid #E8E4DF"></div><div class="p-3"><b class="block text-body-sm dark:text-warm-white">Warm White</b><code class="font-mono text-body-xs text-ink/70 dark:text-stone/70">#F7F5F2</code></div></div>
     </div>
 
     <div class="mt-12 grid gap-5">
-      <div class="reveal flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-ink/12 pt-5">
-        <span class="font-serif text-[clamp(1.6rem,4vw,2.6rem)] font-medium">Source Serif 4</span>
-        <span class="font-mono text-body-xs tracking-[0.08em] uppercase text-emerald-700">Serif / Headlines</span>
+      <div class="reveal flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-ink/12 dark:border-warm-white/10 pt-5">
+        <span class="font-serif text-[clamp(1.6rem,4vw,2.6rem)] font-medium dark:text-warm-white">Source Serif 4</span>
+        <span class="font-mono text-body-xs tracking-[0.08em] uppercase text-emerald-700 dark:text-emerald">Serif / Headlines</span>
       </div>
-      <div class="reveal flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-ink/12 pt-5" data-d="1">
-        <span class="text-[clamp(1.2rem,2.4vw,1.6rem)]">Switzer - the body and interface voice.</span>
-        <span class="font-mono text-body-xs tracking-[0.08em] uppercase text-emerald-700">Sans / Body and UI</span>
+      <div class="reveal flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-ink/12 dark:border-warm-white/10 pt-5" data-d="1">
+        <span class="text-[clamp(1.2rem,2.4vw,1.6rem)] dark:text-warm-white">Switzer - the body and interface voice.</span>
+        <span class="font-mono text-body-xs tracking-[0.08em] uppercase text-emerald-700 dark:text-emerald">Sans / Body and UI</span>
       </div>
-      <div class="reveal flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-ink/12 pt-5" data-d="2">
-        <span class="font-mono text-[clamp(1rem,2vw,1.3rem)]">IBM Plex Mono // labels and data</span>
-        <span class="font-mono text-body-xs tracking-[0.08em] uppercase text-emerald-700">Mono / Labels</span>
+      <div class="reveal flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-ink/12 dark:border-warm-white/10 pt-5" data-d="2">
+        <span class="font-mono text-[clamp(1rem,2vw,1.3rem)] dark:text-warm-white">IBM Plex Mono // labels and data</span>
+        <span class="font-mono text-body-xs tracking-[0.08em] uppercase text-emerald-700 dark:text-emerald">Mono / Labels</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section class="bg-stone text-ink py-24 md:py-32" aria-labelledby="about-h" id="about">
+<section class="bg-stone text-ink dark:bg-ink dark:text-stone dark:border-t dark:border-warm-white/[0.06] py-24 md:py-32" aria-labelledby="about-h" id="about">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid sm:grid-cols-[200px_1fr] gap-8 md:gap-14 items-center">
       <div class="relative w-max reveal">
-        <img src="assets/amit-avatar.png" alt="Amit Shukla" class="w-44 h-44 rounded-[22px] object-cover border border-ink/10 shadow-hard" />
+        <img src="assets/amit-avatar.png" alt="Amit Shukla" class="w-44 h-44 rounded-[22px] object-cover border border-ink/10 dark:border-warm-white/15 shadow-hard" />
       </div>
       <div>
-        <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 before:content-[''] before:w-7 before:h-px before:bg-current">Built by a Mindset engineer</span>
-        <h2 id="about-h" class="reveal font-serif font-medium tracking-tight mt-3 text-[clamp(1.8rem,4vw,2.6rem)]" data-d="1">Amit Shukla</h2>
-        <div class="reveal font-mono text-body-sm tracking-wide text-emerald-700 mt-2 mb-4" data-d="1">SAP ABAP and CAP Developer - Bangalore, India</div>
-        <p class="reveal text-ink/70 text-body-md leading-relaxed max-w-[56ch]" data-d="2">Working on S4HANA-SLT-Kafka message streaming, with depth in HANA DB, SQLScript, RAP, Node.js, and SAP Integration Suite. Part of the team at Mindset Consulting building the SAP experience layer for the AI era.</p>
+        <span class="reveal inline-flex items-center gap-3 font-mono text-body-xs tracking-[0.2em] uppercase text-emerald-700 dark:text-emerald before:content-[''] before:w-7 before:h-px before:bg-current">Built by a Mindset engineer</span>
+        <h2 id="about-h" class="reveal font-serif font-medium tracking-tight mt-3 text-[clamp(1.8rem,4vw,2.6rem)] dark:text-warm-white" data-d="1">Amit Shukla</h2>
+        <div class="reveal font-mono text-body-sm tracking-wide text-emerald-700 dark:text-emerald mt-2 mb-4" data-d="1">SAP ABAP and CAP Developer - Bangalore, India</div>
+        <p class="reveal text-ink/70 dark:text-stone/70 text-body-md leading-relaxed max-w-[56ch]" data-d="2">Working on S4HANA-SLT-Kafka message streaming, with depth in HANA DB, SQLScript, RAP, Node.js, and SAP Integration Suite. Part of the team at Mindset Consulting building the SAP experience layer for the AI era.</p>
         <div class="reveal flex flex-wrap gap-2 mt-6" data-d="3">
-          <a href="https://github.com/Amit-A2Z" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] px-4 rounded-full border border-ink/15 text-body-sm text-ink/80 hover:text-emerald-700 hover:border-emerald-700/50 transition-colors">GitHub - Amit-A2Z</a>
-          <a href="https://x.com/0xAmitShukla" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] px-4 rounded-full border border-ink/15 text-body-sm text-ink/80 hover:text-emerald-700 hover:border-emerald-700/50 transition-colors">X - 0xAmitShukla</a>
-          <a href="https://www.mindsetconsulting.com/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] px-4 rounded-full border border-ink/15 text-body-sm text-ink/80 hover:text-emerald-700 hover:border-emerald-700/50 transition-colors">mindsetconsulting.com</a>
+          <a href="https://github.com/Amit-A2Z" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] px-4 rounded-full border border-ink/15 text-body-sm text-ink/80 hover:text-emerald-700 hover:border-emerald-700/50 dark:border-warm-white/15 dark:text-stone/80 dark:hover:text-emerald dark:hover:border-emerald/50 transition-colors">GitHub - Amit-A2Z</a>
+          <a href="https://x.com/0xAmitShukla" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] px-4 rounded-full border border-ink/15 text-body-sm text-ink/80 hover:text-emerald-700 hover:border-emerald-700/50 dark:border-warm-white/15 dark:text-stone/80 dark:hover:text-emerald dark:hover:border-emerald/50 transition-colors">X - 0xAmitShukla</a>
+          <a href="https://www.mindsetconsulting.com/" target="_blank" rel="noopener" class="inline-flex items-center min-h-[44px] px-4 rounded-full border border-ink/15 text-body-sm text-ink/80 hover:text-emerald-700 hover:border-emerald-700/50 dark:border-warm-white/15 dark:text-stone/80 dark:hover:text-emerald dark:hover:border-emerald/50 transition-colors">mindsetconsulting.com</a>
         </div>
       </div>
     </div>
@@ -259,8 +270,8 @@
 
 </main>
 
-<!-- ============ FOOTER (dark - closing bookend) ============ -->
-<footer class="bg-ink text-warm-white py-14">
+<!-- ============ FOOTER (always dark closing bookend) ============ -->
+<footer class="bg-ink text-warm-white dark:border-t dark:border-warm-white/[0.06] py-14">
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex flex-wrap items-end justify-between gap-6">
       <img src="assets/logos/mindset-wordmark-white.svg" alt="Mindset" class="h-4 w-auto opacity-55" />

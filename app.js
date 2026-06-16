@@ -4,24 +4,54 @@
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  var root = document.documentElement;
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // ---- Nav: wordmark (on dark hero) hands off to {M} on scroll (BRAND.md sec.7).
-  //      Never both at once. Solid glass + ink links once scrolled onto light. ----
+  // ---- Theme: persisted manual choice, else system preference. ----
+  var STORE = 'mindset-theme';
+  var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+  function isDark() { return root.classList.contains('dark'); }
+  function savedChoice() { try { return localStorage.getItem(STORE); } catch (e) { return null; } }
+
+  // ---- Nav: {M} mark, tone follows the surface it sits on (BRAND.md sec.7). ----
   var nav = document.getElementById('nav');
   var navMarkDark = document.getElementById('nav-mark-dark');
   var navMarkLight = document.getElementById('nav-mark-light');
-  function onScroll() {
+  function syncNav() {
     if (!nav) return;
     var solid = window.scrollY > 24;
     nav.classList.toggle('nav-solid', solid);
-    // {M} swaps tone with the surface: bracket-dark on the hero, bracket-light on warm-white.
-    if (navMarkDark) navMarkDark.classList.toggle('hidden', solid);
-    if (navMarkLight) navMarkLight.classList.toggle('hidden', !solid);
+    // The mark sits on a dark surface when: over the hero (not solid), OR the
+    // whole page is in dark theme. It only flips to the light {M} when the nav
+    // has become a warm-white glass bar in light theme.
+    var darkSurface = !solid || isDark();
+    if (navMarkDark) navMarkDark.classList.toggle('hidden', !darkSurface);
+    if (navMarkLight) navMarkLight.classList.toggle('hidden', darkSurface);
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  window.addEventListener('scroll', syncNav, { passive: true });
+  syncNav();
+
+  // ---- Theme toggle (persists choice; 44px target; aria-pressed reflects state) ----
+  var toggle = document.getElementById('theme-toggle');
+  function reflect() { if (toggle) toggle.setAttribute('aria-pressed', String(isDark())); }
+  reflect();
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var next = !isDark();
+      root.classList.toggle('dark', next);
+      try { localStorage.setItem(STORE, next ? 'dark' : 'light'); } catch (e) {}
+      reflect();
+      syncNav();
+    });
+  }
+  // Follow the OS only while the user hasn't made a manual choice.
+  systemDark.addEventListener('change', function (e) {
+    if (savedChoice()) return;
+    root.classList.toggle('dark', e.matches);
+    reflect();
+    syncNav();
+  });
 
   // ---- Reveal once (BRAND.md sec.6: once:true, never re-animate) ----
   var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
