@@ -1,4 +1,4 @@
-# Amit91-VB.github.io
+# Amit-A2Z.github.io
 
 A single-page landing site presenting **Mindset Consulting**'s brand and what the
 firm does: SAP experience design for the AI era.
