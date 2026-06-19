@@ -43,8 +43,24 @@
 <nav id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300" aria-label="Primary">
   <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
     <a href="#top" class="inline-flex items-center min-h-[44px]" aria-label="Mindset Consulting, home">
-      <img id="nav-mark-dark" src="assets/logos/mindset-mark-bracket-dark.svg" alt="Mindset" class="h-6 w-auto" />
-      <img id="nav-mark-light" src="assets/logos/mindset-mark-bracket-light.svg" alt="Mindset" class="h-6 w-auto hidden" />
+      <!-- Animated wordmark: "MINDSET" collapses to the {M} brace mark on scroll
+           (.nav-solid). The leading M is shared by both states; trailing letters
+           (.bm-lt) fade out staggered while the braces (.bm-brace) slide in. Same
+           brace geometry as our {M} brand asset; fills follow the surface via
+           currentColor (letters/M) and --brace (braces). Motion is pure CSS. -->
+      <svg id="nav-logo" class="bracket-morph" viewBox="14.5 183 716 173" aria-hidden="true" focusable="false">
+        <polygon fill="currentColor" points="159.8 326.1 159.7 265.5 134.8 312.3 118 312.3 92.7 266.5 93 326.1 70.2 326.1 70.2 214.5 91 214.5 126.6 282 162.1 214.5 182.8 214.5 182.8 326.1 159.8 326.1 159.8 326.1"/>
+        <polygon class="bm-lt" style="--din:60ms;--dout:520ms" fill="currentColor" points="202 326.1 202 214.5 228.9 214.5 228.9 326.1 202 326.1 202 326.1"/>
+        <path class="bm-lt" style="--din:180ms;--dout:420ms" fill="currentColor" d="M362.9,325.7v-20.7h4.6c36.3,0,39.3-23.6,39.3-35.2,0-23.2-11.8-34.4-39.3-34.4h-20.5v90.3h-19.8l-54.9-68.7v68.7h-24.7v-111.6h19.5l54.9,68.3v-68.3h47.7c12.4,0,23.2,2.2,32.1,6.7,8.9,4.4,15.7,10.8,20.5,19.1,4.7,8.3,7.1,18.4,7.1,29.8s-2.4,21.7-7.1,30.1c-4.7,8.3-11.5,14.8-20.4,19.2-8.9,4.4-17,6.7-32.3,6.7h-6.8Z"/>
+        <path class="bm-lt" style="--din:300ms;--dout:300ms" fill="currentColor" d="M477.9,327.5c-8.4,0-16.9-1.1-25.1-3.3-7.6-2-13.9-4.8-18.8-8.1l8.1-18.3c5.2,3.1,10.8,5.6,16.5,7.3,6.5,1.9,13,2.9,19.5,2.9s11.9-.9,15.7-2.9c5.1-2.6,6.1-6.4,6.1-9.1s-1.9-6.5-5.6-8.7c-3.3-2-9.3-3.9-18.2-5.8-10.7-2.1-19.1-4.8-24.9-7.8-5.7-3-9.7-6.6-12-10.5-2.3-4-3.4-9-3.4-14.8s1.9-12.7,5.7-18c3.8-5.4,9.2-9.6,16.1-12.7,7-3.1,15.1-4.6,24-4.6s16.1,1.1,23.7,3.4c7,2.1,12.6,4.7,16.7,8l-8,18.3c-4.7-3.1-9.6-5.5-14.7-7.2-5.8-1.9-11.6-2.9-17.4-2.9s-10.6,1.2-14.2,3.4c-3.9,2.4-5.8,5.8-5.8,10s.8,4.4,2.3,6.1c1.4,1.5,3.8,2.9,7.3,4.3,3.3,1.3,8.3,2.6,14.8,4,10.3,2.2,18.4,4.9,24.2,8,5.7,3,9.7,6.5,12,10.5,2.3,4,3.5,8.8,3.5,14.4,0,10.7-4,18.9-12.4,25-8.3,6.2-20.4,9.3-35.8,9.3h0Z"/>
+        <polygon class="bm-lt" style="--din:420ms;--dout:180ms" fill="currentColor" points="577.4 281.7 577.4 262 612.3 262 612.3 281.7 577.4 281.7 577.4 281.7"/>
+        <polygon class="bm-lt" style="--din:420ms;--dout:180ms" fill="currentColor" points="540.5 326.1 540.5 214.5 619.1 214.5 619.1 235.5 566.5 235.5 566.5 305.1 619.1 305.1 619.1 326.1 540.5 326.1 540.5 326.1"/>
+        <polygon class="bm-lt" style="--din:520ms;--dout:60ms" fill="currentColor" points="666.6 326.1 666.6 235.5 632.2 235.5 632.2 214.5 728 214.5 728 235.5 693.7 235.5 693.7 326.1 666.6 326.1 666.6 326.1"/>
+        <g transform="translate(-149.36 55.07) scale(0.7008)">
+          <g class="bm-brace bm-brace-l"><path fill="var(--brace)" d="M236.9,295.3c6.4-.2,11.6-1.9,15.6-5.2,4-3.3,6.7-7.8,8-13.5,1.3-5.7,2-15.5,2.1-29.4,0-13.9.3-23,.7-27.4.7-7,2.1-12.6,4.2-16.8,2-4.2,4.5-7.6,7.5-10.2,3-2.5,6.8-4.5,11.5-5.8,3.2-.8,8.3-1.2,15.5-1.2h7v19.6h-3.9c-8.6,0-14.4,1.6-17.2,4.7-2.8,3.1-4.2,10.1-4.2,20.9,0,21.8-.5,35.5-1.4,41.2-1.5,8.9-4.1,15.7-7.7,20.6-3.6,4.8-9.3,9.1-17,12.8,9.1,3.8,15.8,9.7,19.9,17.5,4.1,7.8,6.2,20.7,6.2,38.6s.2,25.8.5,28.9c.7,5.6,2.3,9.6,5,11.8,2.7,2.2,8,3.4,15.9,3.4h3.9v19.6h-7c-8.1,0-14-.7-17.7-2-5.3-1.9-9.7-5-13.2-9.3-3.5-4.3-5.8-9.7-6.8-16.3-1-6.6-1.6-17.3-1.7-32.3,0-15-.8-25.3-2.1-31-1.3-5.7-4-10.3-8-13.6-4-3.3-9.2-5.1-15.6-5.2v-20.3h0Z"/></g>
+          <g class="bm-brace bm-brace-r"><path fill="var(--brace)" d="M550.7,295.3v20.3c-6.4.2-11.6,1.9-15.6,5.2-4,3.3-6.7,7.8-8,13.5-1.3,5.7-2,15.5-2.1,29.3,0,13.9-.3,23-.7,27.4-.7,7.1-2.1,12.7-4.2,16.9-2,4.2-4.5,7.6-7.5,10.1-3,2.5-6.8,4.5-11.5,5.8-3.2.9-8.3,1.4-15.5,1.4h-7v-19.6h3.9c8.6,0,14.4-1.6,17.2-4.7,2.8-3.1,4.2-10.1,4.2-21,0-20.8.4-33.9,1.1-39.5,1.3-9.2,4-16.6,8-22.1,4-5.5,9.6-9.8,16.9-12.9-9.6-4.6-16.3-10.6-20.2-18.1-3.9-7.5-5.9-20.2-5.9-38.1s-.2-25.9-.6-29c-.6-5.6-2.2-9.4-4.9-11.6-2.7-2.2-8-3.3-15.9-3.3h-3.9v-19.6h7c8.1,0,14,.7,17.7,2,5.3,1.8,9.7,4.9,13.2,9.2,3.5,4.3,5.8,9.8,6.8,16.3,1,6.6,1.6,17.3,1.7,32.3,0,15,.8,25.3,2.1,31,1.3,5.7,4,10.2,8,13.5,4,3.3,9.2,5.1,15.6,5.2h0Z"/></g>
+        </g>
+      </svg>
     </a>
     <div class="flex items-center gap-5 sm:gap-7">
       <a href="#approach" class="hidden md:inline-flex items-center min-h-[44px] text-body-sm text-stone/80 hover:text-emerald transition-colors nav-link">Approach</a>
@@ -72,8 +88,7 @@
       mask-image:radial-gradient(120% 90% at 50% 0%,#000,transparent 75%);"></div>
 
   <div class="relative z-10 max-w-6xl mx-auto px-6 py-28 w-full">
-    <img src="assets/logos/mindset-wordmark-white.svg" alt="Mindset" class="h-9 w-auto reveal" />
-    <p class="reveal mt-10 font-mono text-body-xs tracking-[0.22em] uppercase text-emerald" data-d="1">SAP experience design for the AI era</p>
+    <p class="reveal font-mono text-body-xs tracking-[0.22em] uppercase text-emerald" data-d="1">SAP experience design for the AI era</p>
     <h1 class="reveal font-serif font-medium tracking-tight mt-5 leading-[0.98] text-[clamp(2.9rem,8.4vw,6.6rem)]" data-d="1">
       Intelligence,<br /><span class="aurora">Experienced</span>.
     </h1>

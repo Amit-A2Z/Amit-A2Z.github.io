@@ -14,20 +14,13 @@
   function isDark() { return root.classList.contains('dark'); }
   function savedChoice() { try { return localStorage.getItem(STORE); } catch (e) { return null; } }
 
-  // ---- Nav: {M} mark, tone follows the surface it sits on (BRAND.md sec.7). ----
+  // ---- Nav: the glass bar AND the wordmark->{M} logo morph both key off one
+  // scroll state. JS only toggles .nav-solid past the hero; the morph and its
+  // theme-aware colors are pure CSS (see .bracket-morph rules in styles). ----
   var nav = document.getElementById('nav');
-  var navMarkDark = document.getElementById('nav-mark-dark');
-  var navMarkLight = document.getElementById('nav-mark-light');
   function syncNav() {
     if (!nav) return;
-    var solid = window.scrollY > 24;
-    nav.classList.toggle('nav-solid', solid);
-    // The mark sits on a dark surface when: over the hero (not solid), OR the
-    // whole page is in dark theme. It only flips to the light {M} when the nav
-    // has become a warm-white glass bar in light theme.
-    var darkSurface = !solid || isDark();
-    if (navMarkDark) navMarkDark.classList.toggle('hidden', !darkSurface);
-    if (navMarkLight) navMarkLight.classList.toggle('hidden', darkSurface);
+    nav.classList.toggle('nav-solid', window.scrollY > 24);
   }
   window.addEventListener('scroll', syncNav, { passive: true });
   syncNav();
