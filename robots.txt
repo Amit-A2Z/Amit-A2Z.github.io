@@ -1,0 +1,11 @@
+# This is a personal, NON-official design concept by Amit Shukla.
+# The official Mindset Consulting website: https://www.mindsetconsulting.com/
+#
+# Every page is intentionally kept OUT of search indexes via a per-page
+#   <meta name="robots" content="noindex, nofollow">
+# tag. Crawling is deliberately LEFT ALLOWED below so that crawlers can
+# reach the page, READ that noindex directive, and drop the page from
+# their index. A blanket "Disallow: /" would block the crawl and could
+# leave a stale URL lingering in results instead of removing it.
+User-agent: *
+Allow: /
